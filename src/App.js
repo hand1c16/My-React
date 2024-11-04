@@ -42,9 +42,24 @@ function App() {
       {/* <UseRef></UseRef> */}
       {/*<FormHook></FormHook>*/}
       <Provider store={store}>
+        
+        <BrowserRouter>
         <NavBar></NavBar>
-          
-          </Provider>
+          <Routes>
+            {/* <Route path="/" element = {<NavBar/>}>
+              <Route index element = {<HomePage/>}/>
+              <Route path="/shop" element = {<Shop/>}/>
+              <Route path="/cart" element = {<Cart/>}/>
+              <Route path="/pay" element = {<GoToPay/>}/>
+            </Route> */}
+            <Route index element = {<HomePage/>}></Route>
+            <Route exact path="/shop" element = {<Shop/>}></Route>
+            <Route exact path="/cart" element = {<Cart/>}></Route>
+            <Route exact path="/about" element = {<About/>}></Route>
+            <Route exact path="/pay" element = {<GoToPay/>}></Route>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
       </header>
     </div>
   );
